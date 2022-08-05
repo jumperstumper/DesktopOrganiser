@@ -20,6 +20,7 @@ namespace DesktopOrganiser
             while (true)
             {
                 menu.StartMenu();
+            
             }
         }
 
