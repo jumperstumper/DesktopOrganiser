@@ -20,11 +20,6 @@ namespace DesktopOrganiser.Organizer
 
             foreach (var item in dirs)
             {
-                //string files = ".txt";
-
-                //List<string> files = new List<string> { "word1", "word2", "word3" }.ToList();
-
-                //Skapa mapp här
 
                 string photoFolder = @"C:\Users\danii\OneDrive\Skrivbord\Photos";
                 string textFolder = @"C:\Users\danii\OneDrive\Skrivbord\TextFiles";
@@ -32,16 +27,39 @@ namespace DesktopOrganiser.Organizer
                 System.IO.Directory.CreateDirectory(photoFolder);
                 System.IO.Directory.CreateDirectory(textFolder);
 
-                string textFile = ".txt";
 
-                if (item.Contains(textFile))
+                string[] textFiles;
+                string[] photoFiles;
+
+                textFiles = new string[] {".txt",".docx",".zip"};
+                photoFiles = new string[] {".pdf",".png",".jpg", ".webp" };
+
+
+                foreach (var word in textFiles)
                 {
+                    if (item.Contains(word))
+                    {
+                        string fileName = item.Substring(34);
 
+                        File.Move(item, textFolder + @"\" + fileName);
+
+                    }
+                   
+                }
+
+                foreach (var word in photoFiles)
+                {
+                    if (item.Contains(word))
+                    {
+                        string fileName = item.Substring(34);
+
+                        File.Move(item, photoFolder + @"\" + fileName);
+
+                    }
                 }
 
 
-
-
+                
             }
 
           

@@ -21,7 +21,7 @@ namespace DesktopOrganiser
         {
             Console.WriteLine("----------------------------");
             Console.WriteLine("Welcome!");
-            Console.WriteLine("Your last orgianze was ###/###/###");
+            Console.WriteLine("Your last orgianze was " + DateTime.UtcNow);
             Console.WriteLine("----------------------------");
             Console.WriteLine("Press 1 to organize your desktop!");
 
